@@ -1200,7 +1200,7 @@ class _FloatingProjectCardState extends State<FloatingProjectCard>
   void initState() {
     super.initState();
     _floatController = AnimationController(
-      duration: Duration(seconds: 3 + widget.index % 3),
+      duration: Duration(seconds: 2 + widget.index % 3),
       vsync: this,
     )..repeat(reverse: true);
   }
@@ -1257,7 +1257,7 @@ class _FloatingProjectCardState extends State<FloatingProjectCard>
                           ),
                           child: Stack(
                             children: [
-                              Image.network(
+                              Image.asset(
                                 _projects[widget.index]['image']!,
                                 height: 160,
                                 width: double.infinity,
@@ -1317,29 +1317,7 @@ class _FloatingProjectCardState extends State<FloatingProjectCard>
                                   color: Colors.grey[400],
                                 ),
                               ),
-                              // const SizedBox(height: 16),
-                              // Row(
-                              //   children: [
-                              //     ...List.generate(
-                              //       5,
-                              //       (i) => Icon(
-                              //         Icons.star,
-                              //         color: i < 4
-                              //             ? const Color(0xFFFFA726)
-                              //             : Colors.grey.withOpacity(0.3),
-                              //         size: 14,
-                              //       ),
-                              //     ),
-                              //     const SizedBox(width: 8),
-                              //     Text(
-                              //       '4.8',
-                              //       style: TextStyle(
-                              //         color: Colors.grey[400],
-                              //         fontSize: 12,
-                              //       ),
-                              //     ),
-                              //   ],
-                              // ),
+
                               const SizedBox(height: 16),
                               SizedBox(
                                 width: double.infinity,
@@ -2116,7 +2094,7 @@ class _ProjectDetailModalState extends State<ProjectDetailModal> {
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(20),
                                     image: DecorationImage(
-                                      image: NetworkImage(
+                                      image: AssetImage(
                                         widget.screenshots[index],
                                       ),
                                       fit: BoxFit.cover,
